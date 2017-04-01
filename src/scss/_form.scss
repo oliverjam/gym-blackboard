@@ -1,4 +1,6 @@
 .form {
+  max-width: 30em;
+  margin: 0 auto;
   padding: $space-md;
   background-color: white;
   box-shadow: 0 1px 2px rgba($grey, 0.5);
@@ -15,8 +17,8 @@
   }
   &__group {
     display: flex;
-    & > * + * {
-      margin-left: $space-sm;
+    & > *:last-child {
+      margin-left: $space-md;
     }
   }
   &__label {
