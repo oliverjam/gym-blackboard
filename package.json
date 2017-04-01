@@ -32,8 +32,9 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
-    "express": "^4.15.2",
     "env2": "^2.1.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
     "pg": "^6.1.5"
   }
 }
