@@ -1,12 +1,19 @@
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 
 const getLifters = require('./getLifters');
+const postData = require('./postData');
 
 const server = express();
 
 const port = process.env.PORT || 3000;
+
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({
+  extended: true,
+}));
 
 server.use(express.static(path.join(__dirname, '..', 'public')));
 
@@ -31,12 +38,15 @@ server.get('/lifters', (req, res) => {
     if (err) {
       res.json({ oops: 'sorry' });
     } else {
-      // res.json(liftersObj);
       res.render('lifters', {
         lifters: liftersArr,
       });
     }
   });
+});
+
+server.post('/submit', (req, res) => {
+  postData(req.body);
 });
 
 server.listen(port, (err) => {

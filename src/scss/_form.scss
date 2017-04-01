@@ -23,19 +23,6 @@
   }
   &__label {
     font-size: 0.8em;
-    &--btn {
-      padding: $space-sm $space-md;
-      font-size: 1em;
-      text-align: center;
-      color: $white;
-      background-color: $secondary;
-      transform: translateY(-1px);
-      transition: background-color 0.2s;
-      box-shadow: 0 2px 3px rgba($grey, 0.5);
-      &:hover {
-        background-color: darken($secondary, 8%);
-      }
-    }
   }
   &__input {
     margin-top: 0;
@@ -53,11 +40,28 @@
     }
     &--radio {
       display: none;
-      &:checked + .form__label--btn {
+      &:checked + label {
         background-color: $primary;
         transform: translateY(0);
         box-shadow: none;
       }
+    }
+  }
+  &__btn {
+    padding: $space-sm $space-md;
+    font-size: 1em;
+    text-align: center;
+    color: $white;
+    background-color: $secondary;
+    border: none;
+    transform: translateY(-1px);
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 3px rgba($grey, 0.5);
+    &:hover {
+      background-color: darken($secondary, 8%);
+    }
+    &:active {
+      transform: translateY(0);
     }
   }
 }
