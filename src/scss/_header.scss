@@ -1,0 +1,22 @@
+.header {
+  padding: $space-md;
+  display: flex;
+  color: $white;
+  background-color: $primary;
+  box-shadow: 0 2px 1px rgba($grey, 0.5);
+  &__brand {
+    font-weight: 700;
+  }
+  &__nav {
+    margin-left: auto;
+  }
+  &__list {
+    display: flex;
+  }
+  &__list-item {
+    margin-left: $space-md;
+  }
+  &__link {
+    color: inherit;
+  }
+}

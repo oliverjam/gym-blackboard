@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "start:dev": "nodemon src/server.js",
+    "bs": "browser-sync start --no-notify --proxy 'localhost:3000' --port 5000 --files *",
+    "start:dev": "parallelshell 'nodemon src/server.js' 'npm run bs' 'npm run css -s'",
+    "precss": "node-sass src/scss/main.scss --output-style compressed -o public",
+    "css": "node-sass src/scss/main.scss --output-style compressed  -wo public",
     "test": "tape tests/test.js | tap-spec",
     "coverage": "istanbul tests/test.js | tap-spec"
   },
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/oliverjam/gym-blackboard#readme",
   "devDependencies": {
+    "browser-sync": "^2.18.8",
     "codecov": "^2.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.2",
@@ -27,6 +31,8 @@
     "istanbul": "^0.4.5",
     "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
+    "parallel": "^1.1.0",
+    "parallelshell": "^2.0.0",
     "shot": "^3.4.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"

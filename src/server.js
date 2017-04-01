@@ -1,11 +1,14 @@
 const path = require('path');
-const server = require('express')();
+const express = require('express');
 const hbs = require('express-handlebars');
 
 const getLifters = require('./getLifters');
-// const routes = require('./routes');
+
+const server = express();
 
 const port = process.env.PORT || 3000;
+
+server.use(express.static(path.join(__dirname, '..', 'public')));
 
 server.engine('.hbs', hbs({
   defaultLayout: 'main',
@@ -29,7 +32,6 @@ server.get('/lifters', (req, res) => {
       res.json({ oops: 'sorry' });
     } else {
       // res.json(liftersObj);
-      console.log(liftersArr);
       res.render('lifters', {
         lifters: liftersArr,
       });

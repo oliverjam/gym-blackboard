@@ -1,0 +1,43 @@
+body {
+  font-size: $font-size-medium;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+  color: $text-dark;
+  background-color: $white;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $secondary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Give any paragraph following an element a margin
+* + p {
+  margin-top: $space-md;
+}
+
+.container {
+  max-width: $site-width;
+  margin: 0 auto;
+  padding: $space-md;
+}
+
+.u-vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.u-center {
+  text-align: center;
+}

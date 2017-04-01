@@ -1,1 +1,16 @@
-<h2>Hello {{name}}</h2>
+<form class="form" action="index.html" method="post">
+  <label class="form__label" for="name">Name</label>
+  <input class="form__input" id="name" type="text" name="name" placeholder="Clarence Kennedy">
+  <label class="form__label" for="weight">Bodyweight (kg)</label>
+  <input class="form__input" id="weight" type="number" name="weight" placeholder="100">
+  <div class="form__group">
+    <input class="form__input--radio" id="male" type="radio" name="sex" checked>
+    <label class="form__label form__label--btn" id="radio1" for="male">Male</label>
+    <input class="form__input--radio" id="female" type="radio" name="sex">
+    <label class="form__label form__label--btn" id="radio2" for="female">Female</label>
+  </div>
+  <label class="form__label" for="name">Snatch (kg)</label>
+  <input class="form__input" id="snatch" type="text" name="snatch" placeholder="180">
+  <label class="form__label" for="clean_jerk">Clean &amp; Jerk (kg)</label>
+  <input class="form__input" id="clean_jerk" type="text" name="clean_jerk" placeholder="230">
+</form>

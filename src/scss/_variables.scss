@@ -1,0 +1,25 @@
+$dark-grey: hsl(220, 20, 25);
+$grey: hsl(220, 20, 50);
+$light-grey: hsl(220, 15, 75);
+$white: hsl(220, 20, 98);
+$blue: hsl(220, 50, 50);
+$red: hsl(0, 50, 50);
+
+$primary: $red;
+$secondary: $blue;
+$text-dark: $dark-grey;
+$text-light: $white;
+$bg-dark: $dark-grey;
+$bg-light: $white;
+$bg-mid: $light-grey;
+
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
+$space-xxl: 8rem;
+
+$site-width: 40em;
+
+$font-size-medium: 1.25em;
+$font-size-large: 1.375em;
