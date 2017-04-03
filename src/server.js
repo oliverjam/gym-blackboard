@@ -26,7 +26,7 @@ server.engine('.hbs', hbs({
 server.set('view engine', '.hbs');
 server.set('views', path.join(__dirname, 'views'));
 
-server.use('/', (req, res) => {
+server.get('/', (req, res) => {
   res.render('home');
 });
 
@@ -44,8 +44,10 @@ server.get('/lifters', (req, res) => {
 });
 
 server.post('/submit', (req, res) => {
-  postData(req.body);
-  res.redirect('/');
+  postData(req.body, () => {
+    console.log('Data posted!');
+  });
+  res.redirect('/lifters');
 });
 
 server.listen(port, (err) => {
