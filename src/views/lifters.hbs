@@ -1,13 +1,17 @@
-{{#each lifters}}
-<article class="card">
-  <h2 class="card__title">{{name}}</h2>
-  <div class="card__body">
-    <p>Weight: {{bodyweight}}kg</p>
-    <p>Sex: {{sex}}</p>
-    <p>Snatch: {{snatch}}kg</p>
-    <p>Clean & Jerk: {{clean_jerk}}kg</p>
-    <p>Sinclair: {{sinclair}}</p>
-    <time datetime="{{updated}}">{{updated}}</time>
-  </div>
-</article>
-{{/each}}
+<div class="grid">
+  {{#each lifters}}
+    <div class="grid__item">
+      <article class="card">
+        <h2 class="card__title">{{name}}</h2>
+        <div class="card__body">
+          <p>Weight: {{bodyweight}}kg</p>
+          <p>Sex: {{sex}}</p>
+          <p>Snatch: {{snatch}}kg</p>
+          <p>Clean & Jerk: {{clean_jerk}}kg</p>
+          <p>Sinclair: {{sinclair}}</p>
+          <time datetime="{{updated}}">{{updated}}</time>
+        </div>
+      </article>
+    </div>
+  {{/each}}
+</div>
