@@ -26,10 +26,8 @@ server.engine('.hbs', hbs({
 server.set('view engine', '.hbs');
 server.set('views', path.join(__dirname, 'views'));
 
-server.get('/', (req, res) => {
-  res.render('home', {
-    name: 'Oli',
-  });
+server.use('/', (req, res) => {
+  res.render('home');
 });
 
 
@@ -47,6 +45,7 @@ server.get('/lifters', (req, res) => {
 
 server.post('/submit', (req, res) => {
   postData(req.body);
+  res.redirect('/');
 });
 
 server.listen(port, (err) => {
